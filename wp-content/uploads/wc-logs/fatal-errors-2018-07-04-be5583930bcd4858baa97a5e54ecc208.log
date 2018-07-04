@@ -1,0 +1,10 @@
+2018-07-04T10:04:53+00:00 CRITICAL Uncaught Error: Call to undefined function storefront_get_content_background_color() in C:\D\xampp\htdocs\woocommerce\wp-content\themes\Epal-theme\inc\customizer\class-storefront-customizer.php:542
+Stack trace:
+#0 C:\D\xampp\htdocs\woocommerce\wp-content\themes\Epal-theme\inc\customizer\class-storefront-customizer.php(571): Storefront_Customizer->get_storefront_theme_mods()
+#1 C:\D\xampp\htdocs\woocommerce\wp-content\themes\Epal-theme\inc\customizer\class-storefront-customizer.php(937): Storefront_Customizer->get_css()
+#2 C:\D\xampp\htdocs\woocommerce\wp-includes\class-wp-hook.php(286): Storefront_Customizer->add_customizer_css('')
+#3 C:\D\xampp\htdocs\woocommerce\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#4 C:\D\xampp\htdocs\woocommerce\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#5 C:\D\xampp\htdocs\woocommerce\wp-includes\script-loader.php(1447): do_action('wp_enqueue_scri...')
+#6 C:\D\xampp\htdocs\woocommerce\wp-includes\class-wp-hook.php(286): wp_enqueue_scripts('
+

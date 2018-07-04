@@ -73,9 +73,9 @@ function redirect_404_to_homepage() {
 
 
 
+//Add Template Woocommerce
+$storefront = (object) array(
+    'main'       => require 'inc/class-storefront.php',
+);
 
 
-
-
-
-?>
