@@ -1,0 +1,84 @@
+
+
+
+
+@media (min-width: 1024px) and (max-width: 1365px){
+    .menu_center.col-md-7 {
+        padding: 0;
+    }
+    .menu_main ul {
+        margin-top: 20px;
+    }
+    .menu_language {
+        margin-top: 25px;
+    }
+    .logo_slider {
+        top: 34%;
+        right: -16%;
+        max-width: 597px;
+    }
+    .our_companion_all > div:nth-child(5), .our_companion_all > div:nth-child(10),
+    .our_companion_all > div:nth-child(15), .our_companion_all > div:nth-child(20) {
+        margin-right: 0;
+    }
+    .our_companion_all > div {
+        width: 182px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .menu_main ul {
+        margin-top: 14px;
+    }
+    .menu_main li {
+        padding: 5px 5px;
+    }
+    .menu_main li a {
+        font-size: 11px;
+    }
+    .menu_language p {
+        font-size: 11px;
+    }
+    .menu_language{
+        margin-top:22px;
+    }
+    section#menu_header > div > div > div {
+        padding: 0;
+    }
+    .logo_slider {
+        top: 47%;
+        right: -16%;
+        max-width: 462px;
+    }
+    .create_text {
+        padding: 47px 0;
+    }
+    .our_companion_all > div {
+        width: 176px;
+    }
+    .our_companion_all > div:nth-child(4), .our_companion_all > div:nth-child(8),
+    .our_companion_all > div:nth-child(12), .our_companion_all > div:nth-child(16) {
+        margin-right: 0;
+    }
+    .footer_about p {
+        padding-right: 0;
+    }
+    .footer_contact_information span {
+        width: 67%;
+    }
+    .all_title p:after{
+        left: 36%;
+    }
+}
+
+@media (min-width: 414px) and (max-width: 767px) {
+    .our_companion_all > div:nth-child(2), .our_companion_all > div:nth-child(4),
+    .our_companion_all > div:nth-child(6), .our_companion_all > div:nth-child(8),
+    .our_companion_all > div:nth-child(10), .our_companion_all > div:nth-child(12),
+    .our_companion_all > div:nth-child(14), .our_companion_all > div:nth-child(16) {
+        margin-right: 0;
+    }
+    .our_companion_all > div {
+        width: 199px;
+    }
+}
