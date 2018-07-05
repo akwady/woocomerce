@@ -10,7 +10,7 @@
         'cat' => $id, // ID của categories
         'paged' => $paged, // Dùng Để Phân Trang
     ]);
-    while($query->have_posts()) : $query->the_post()
+    while($list->have_posts()) : $list->the_post()
 ?>
         <?php the_post_thumbnail() //Lấy Ảnh Đại Diện Bài Viết Hàm Này Không Cần Thẻ IMG (get_the_post_thumbnail_url() hàm này cần thẻ IMG) ?>
 

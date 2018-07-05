@@ -4,7 +4,7 @@
 <?php
     $id = get_queried_object_id(); // Hàm Lấy ID Taxonomy
     $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-    $list = [
+    $list = new WP_Query([
         'post_type' => 'product', // Tham Số Lấy Bài Viết
         'posts_per_page' => 3,  // Giới Hạn Lấy bao Nhiêu Bài Viết
         'paged' => $paged, // Dùng Để Phân Trang
@@ -15,9 +15,8 @@
                 'field' => 'id', // Tham Số Lấy Bài ID Hoặc Slug
                 'terms' => $id, // ID của categories
             )),
-    ];
-    $query = new WP_Query($list);
-    while($query->have_posts()) : $query->the_post()
+    ]);
+    while($list->have_posts()) : $list->the_post()
 ?>
 
 
