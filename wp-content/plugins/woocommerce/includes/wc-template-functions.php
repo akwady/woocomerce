@@ -804,9 +804,7 @@ function wc_terms_and_conditions_page_content() {
  * @since 3.4.0
  */
 function wc_checkout_privacy_policy_text() {
-	echo '<div class="woocommerce-privacy-policy-text">';
-	wc_privacy_policy_text( 'checkout' );
-	echo '</div>';
+
 }
 
 /**
@@ -815,9 +813,7 @@ function wc_checkout_privacy_policy_text() {
  * @since 3.4.0
  */
 function wc_registration_privacy_policy_text() {
-	echo '<div class="woocommerce-privacy-policy-text">';
-	wc_privacy_policy_text( 'registration' );
-	echo '</div>';
+
 }
 
 /**
