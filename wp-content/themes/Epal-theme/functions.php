@@ -78,14 +78,30 @@ $storefront = (object) array(
     'main'       => require 'inc/class-storefront.php',
 );
 
+//Code phan trang
+function devvn_wp_corenavi($custom_query = null, $paged = null) {
+    global $wp_query;
+    if($custom_query) $main_query = $custom_query;
+    else $main_query = $wp_query;
+    $paged = ($paged) ? $paged : get_query_var('paged');
+    $big = 999999999;
+    $total = isset($main_query->max_num_pages)?$main_query->max_num_pages:'';
+    if($total > 1) echo '<div class="pagenavi">';
+    echo paginate_links( array(
+        'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+        'format' => '?paged=%#%',
+        'current' => max( 1, $paged ),
+        'total' => $total,
+        'mid_size' => '10', // Số trang hiển thị khi có nhiều trang trước khi hiển thị ...
+        'prev_text'    => __('<i class="fas fa-caret-left" ></i>','devvn'),
+        'next_text'    => __('<i class="fas fa-caret-right" ></i>','devvn'),
+    ) );
+    if($total > 1) echo '</div>';
+}
 
 
 
-
-/**
- * Optimize WooCommerce Scripts
- * Remove WooCommerce Generator tag, styles, and scripts from non WooCommerce pages.
- */
+// Tối ưu Woocommerce css, js
 add_action( 'wp_enqueue_scripts', 'child_manage_woocommerce_styles', 99 );
 
 function child_manage_woocommerce_styles()
