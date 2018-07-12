@@ -51,13 +51,6 @@ add_filter('upload_mimes', 'dvb_custom_mime_types');
 
 
 
-//Add Css Thay Đổi Trang wp-login wordpress
-function login_css() {
-    wp_enqueue_style( 'login_css', get_template_directory_uri() . '/wp-admin/login.css' );
-    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
-}
-add_action('login_head', 'login_css');
-
 
 
 //404, phai vao tao 1 trang 404 trong wordpress
