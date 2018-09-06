@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Akismet Anti-Spam - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-10-05 16:53:44+0000\n"
+"PO-Revision-Date: 2018-08-24 07:49:23+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,46 @@ msgstr ""
 "X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: vi_VN\n"
 "Project-Id-Version: Plugins - Akismet Anti-Spam - Stable (latest release)\n"
+
+#: views/notice.php:138
+msgid "To help your site with transparency under privacy laws like the GDPR, Akismet can display a notice to your users under your comment forms. This feature is disabled by default, however, you can turn it on below."
+msgstr "Để giúp website của bạn đáp ứng các quy định như bộ luật GDPR, Akismet có thể hiển thị chú ý tới người dùng bên dưới mục bình luận. Tính năng này mặc định được tắt, nhưng bạn có thể bật nó ở bên trên."
+
+#: views/config.php:162
+msgid "To help your site with transparency under privacy laws like the GDPR, Akismet can display a notice to your users under your comment forms. This feature is disabled by default, however, you can turn it on above."
+msgstr "Để giúp website của bạn đáp ứng các quy định như bộ luật GDPR, Akismet có thể hiển thị chú ý tới người xem bên dưới mục bình luận. Tính năng này mặc định không được kích hoạt, tuy nhiên, bạn có thể bật nó ở ngay trên đây."
+
+#: views/notice.php:139
+msgid " Please <a href=\"%s\">enable</a> or <a href=\"%s\">disable</a> this feature. <a href=\"%s\" id=\"akismet-privacy-notice-control-notice-info-link\" target=\"_blank\">More information</a>."
+msgstr " Vui lòng <a href=\"%s\">bật</a> hoặc <a href=\"%s\">tắt</a> tính năng này. <a href=\"%s\" id=\"akismet-privacy-notice-control-notice-info-link\" target=\"_blank\">Tìm hiểu thêm</a>."
+
+#: views/notice.php:137
+msgid "Akismet & Privacy."
+msgstr "Akismet và Chính sách riêng tư."
+
+#: views/config.php:160
+msgid "Do not display privacy notice."
+msgstr "Không hiển thị thông báo bảo mật."
+
+#: views/config.php:159
+msgid "Display a privacy notice under your comment forms."
+msgstr "Hiển thị chú ý về chính sách riêng tư bên dưới mục bình luận của bạn."
+
+#: views/config.php:158
+msgid "Akismet privacy notice"
+msgstr "Thông báo bảo mật của Akismet"
+
+#: views/config.php:155
+msgid "Privacy"
+msgstr "Riêng tư"
+
+#: class.akismet.php:1419
+msgid "This site uses Akismet to reduce spam. <a href=\"%s\" target=\"_blank\" rel=\"nofollow noopener\">Learn how your comment data is processed</a>."
+msgstr "Website này sử dụng Akismet để hạn chế spam. <a href=\"%s\" target=\"_blank\" rel=\"nofollow noopener\">Tìm hiểu bình luận của bạn được duyệt như thế nào</a>."
+
+#: class.akismet-admin.php:86
+msgid "We collect information about visitors who comment on Sites that use our Akismet anti-spam service. The information we collect depends on how the User sets up Akismet for the Site, but typically includes the commenter's IP address, user agent, referrer, and Site URL (along with other information directly provided by the commenter such as their name, username, email address, and the comment itself)."
+msgstr "Chúng tôi thu thập thông tin về người dùng đã bình luận trên website sử dụng dịch vụ của Akismet. Các thông tin thu thập phụ thuộc vào cách người sử dụng cài đặt Akismet trên website, nhưng thông thường bao gồm địa chỉ IP, trình duyệt, nguồn đến và địa chỉ Website (bên cạnh các thông tin khác người dùng trực tiếp nhập như họ tên, tài khoản, địa chỉ email và nội dung bình luận)."
 
 #: class.akismet.php:226
 msgid "Comment discarded."
@@ -65,9 +105,9 @@ msgstr "Trong trang này, bạn có thể cập nhật thiết lập Akismet và
 
 #. Description of the plugin/theme
 msgid "Used by millions, Akismet is quite possibly the best way in the world to <strong>protect your blog from spam</strong>. It keeps your site protected even while you sleep. To get started: activate the Akismet plugin and then go to your Akismet Settings page to set up your API key."
-msgstr "Được sử dụng bởi hàng triệu người, Akismet có thể là cách tốt nhất trên thế giới để <strong>bảo về blog của bạn từ spam</strong>. Nó giúp trang của bạn được bảo vệ cả khi bạn đang ngủ. Để bắt đầu: kích hoạt phần mở rộng Akismet và chuyển đến trang Thiết lập Akismet để cài đặt API key của bạn. "
+msgstr "Được sử dụng bởi hàng triệu người, Akismet có thể là cách tốt nhất trên thế giới để <strong>bảo vệ blog của bạn từ spam</strong>. Nó giúp trang của bạn được bảo vệ cả khi bạn đang ngủ. Để bắt đầu: kích hoạt phần mở rộng Akismet và chuyển đến trang Thiết lập Akismet để cài đặt API key của bạn. "
 
-#. #-#-#-#-#  akismet-code.pot (Akismet Anti-Spam 4.0.7)  #-#-#-#-#
+#. #-#-#-#-#  akismet-code.pot (Akismet Anti-Spam 4.0.8)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: class.akismet-admin.php:111 class.akismet-admin.php:114
 msgid "Akismet Anti-Spam"
