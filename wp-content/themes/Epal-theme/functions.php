@@ -141,6 +141,15 @@ function devvn_wp_corenavi($custom_query = null, $paged = null) {
 }
 
 
+//Sửa Đổi Mặc Định gallery của woocommerce
+add_action( 'after_setup_theme', 'yourtheme_setup' );
+function yourtheme_setup() {
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
+}
+
+
 // Tối ưu Woocommerce css, js
 add_action( 'wp_enqueue_scripts', 'child_manage_woocommerce_styles', 99 );
 
@@ -176,7 +185,17 @@ function child_manage_woocommerce_styles()
 }
 
 
-
+add_filter( 'woocommerce_checkout_fields' , 'custom_checkout_form' );
+function custom_checkout_form( $fields ) {
+    unset($fields['billing']['billing_postcode']); //Ẩn postCode
+    unset($fields['billing']['billing_state']); //Ẩn bang hạt
+    unset($fields['billing']['billing_address_2']); //Ẩn địa chỉ 2
+    unset($fields['billing']['billing_company']); //Ẩn công ty
+    unset($fields['billing']['billing_country']);// Ẩn quốc gia
+//    unset($fields['billing']['billing_last_name']);//Ẩn last name
+    unset($fields['billing']['billing_city']); //Ẩn select box chọn thành phố
+    return $fields;
+}
 
 
 
