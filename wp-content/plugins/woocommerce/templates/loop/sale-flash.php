@@ -22,11 +22,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $post, $product;
 
-?>
-<?php if ( $product->is_on_sale() ) : ?>
-
-	<?php echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . esc_html__( 'Sale!', 'woocommerce' ) . '</span>', $post, $product ); ?>
-
-<?php endif;
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
+global $post, $product;
+if ( $product->is_on_sale() ) :
+    if ( ! $product->is_in_stock() ) return;
+    $sale_price = get_post_meta( $product->get_id(), '_price', true);
+    $regular_price = get_post_meta( $product->get_id(), '_regular_price', true);
+    if (empty($regular_price) && $product->is_type( 'variable' )){
+        $available_variations = $product->get_available_variations();
+        $variation_id = $available_variations[0]['variation_id'];
+        $variation = new WC_Product_Variation( $variation_id );
+        $regular_price = $variation ->regular_price;
+        $sale_price = $variation ->sale_price;
+    }
+    $sale = ceil(( ($regular_price - $sale_price) / $regular_price ) * 100);
+    if ( !empty( $regular_price ) && !empty( $sale_price ) && $regular_price > $sale_price ) :
+        $R = floor((255*$sale)/100);
+        $G = floor((255*(100-$sale))/100);
+        $bg_style = 'background:none;background-color: rgb(' . $R . ',' . $G . ',0);';
+        echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale" style="'. $bg_style .'">-' . $sale . '%</span>', $post, $product );
+    endif;
+endif;
 
 /* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
