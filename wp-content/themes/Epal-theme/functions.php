@@ -9,7 +9,11 @@ define('THEME_URL', get_stylesheet_directory_uri());
  *  INCLUDED FILES
  */
 
+add_editor_style( 'css/button-web.css');
+
+
 $file_includes = [
+    'inc/button-editer.php',                 // Button Editor
     'inc/theme-assets.php',                 // Style and JS
     'inc/theme-setup.php',                  // General theme setting
     'inc/acf-options.php',                  // ACF Option page
