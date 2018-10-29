@@ -331,3 +331,7 @@ input#submit {
     clear: initial;
     margin-right: 0 !important;
 }
+
+p#billing_country_field {
+    display: none;
+}

@@ -200,7 +200,7 @@ do_action('login_header');
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="company_detail">
-                        <h4 class="logo"><img src="<?php echo get_template_directory_uri() . '/images/logo.svg' ?>"
+                        <h4 class="logo"><img src="<?php echo get_template_directory_uri() . '/images/logo-epal.svg' ?>"
                                               alt=""></h4>
                         <h3 class="login-name">EPAL WP CMS</h3>
                         <p>ver 6.0.23618</p>
@@ -1332,7 +1332,3 @@ switch ($action) {
         </div>
     </div>
 </div>
-
-
-<link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/wp-admin/login.css' ?>">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/bootstrap.min.css' ?>">
