@@ -2,7 +2,7 @@
 
 //Add Template Woocommerce
 $storefront = (object) array(
-    'main'       => require 'inc/class-storefront.php',
+    'main'       => require 'class-storefront.php',
 );
 
 

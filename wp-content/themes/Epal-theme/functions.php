@@ -13,12 +13,12 @@ add_editor_style( 'css/button-web.css');
 
 
 $file_includes = [
-    'inc/button-editer.php',                 // Button Editor
+    'inc/button-editer.php',                // Button Editor
     'inc/theme-assets.php',                 // Style and JS
     'inc/theme-setup.php',                  // General theme setting
     'inc/acf-options.php',                  // ACF Option page
-    'inc/theme-shortcode.php'              // Theme Shortcode
-    'inc/woocommerce-setup.php'              // woocommerce-setup
+    'inc/theme-shortcode.php',              // Theme Shortcode
+    'inc/woocommerce-setup.php'             // woocommerce-setup
 ];
 
 foreach ($file_includes as $file) {
