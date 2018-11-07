@@ -386,3 +386,18 @@
     line-height: 1.5;
     border-radius: 3px;
 }
+
+
+
+/*---------------------Định Dạng Text--------------------*/
+.Text-Uppercase{
+    text-transform: uppercase;
+}
+
+.Text-Capitalize{
+    text-transform: capitalize;
+}
+
+.Text-Lowercase{
+    text-transform: lowercase;
+}
