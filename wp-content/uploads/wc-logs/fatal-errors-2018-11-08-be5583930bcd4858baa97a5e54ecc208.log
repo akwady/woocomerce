@@ -1,0 +1,6 @@
+2018-11-08T03:48:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\D\Xampp\htdocs\woocomerce\wp-content\plugins\woocommerce\includes\libraries\action-scheduler\functions.php on line 17
+
+2018-11-08T03:49:54+00:00 CRITICAL Cannot redeclare wpds_check_thumbnail() (previously declared in C:\D\Xampp\htdocs\woocomerce\wp-content\themes\Epal-theme\inc\theme-setup.php:120) in C:\D\Xampp\htdocs\woocomerce\wp-content\themes\Epal-theme\inc\theme-setup.php on line 312
+
+2018-11-08T03:49:59+00:00 CRITICAL Cannot redeclare wpds_check_thumbnail() (previously declared in C:\D\Xampp\htdocs\woocomerce\wp-content\themes\Epal-theme\inc\theme-setup.php:120) in C:\D\Xampp\htdocs\woocomerce\wp-content\themes\Epal-theme\inc\theme-setup.php on line 312
+

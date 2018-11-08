@@ -112,9 +112,9 @@ add_filter('gform_enable_field_label_visibility_settings', '__return_true');
 
 
 
-
-//-----------------Code New---------------
-
+//*
+//* Bắt buộc thêm ảnh Featured Image trước khi đăng bài
+//*
 add_action('save_post', 'wpds_check_thumbnail');
 add_action('admin_notices', 'wpds_thumbnail_error');
 function wpds_check_thumbnail($post_id) {
@@ -142,6 +142,11 @@ function wpds_thumbnail_error()
     }
 }
 
+
+
+//*
+//* Thêm màu trạng thái bài viết
+//*
 add_action('admin_footer','posts_status_color');
 function posts_status_color(){
     ?>
@@ -155,9 +160,16 @@ function posts_status_color(){
     <?php
 }
 
+
+
+//*
+//* Tự động xóa revision của bài viết
+//*
 $wpdb->query( "DELETE FROM $wpdb->posts WHERE post_type = 'revision'" );
 
-
+//*
+//* Chặn các truy vấn nguy hiểm
+//*
 global $user_ID; if($user_ID) {
     if(!current_user_can('administrator')) {
         if (strlen($_SERVER['REQUEST_URI']) > 255 ||
@@ -192,8 +204,9 @@ function wpb_imagelink_setup() {
 }
 add_action('admin_init', 'wpb_imagelink_setup', 10);
 
-
-
+//*
+//* Phân quyền category cho user
+//*
 add_action('show_user_profile', 'restrict_user_form');
 add_action('edit_user_profile', 'restrict_user_form');
 
@@ -272,6 +285,9 @@ function save_restrict_post($post_id)
 }
 
 
+//*
+//* Cho phép author chỉ xem được comment của bài họ viết
+//*
 function get_comment_list_by_user($clauses)
 {
     if (is_admin()) {
@@ -287,6 +303,20 @@ if (!current_user_can('edit_others_posts')) {
     add_filter('comments_clauses', 'get_comment_list_by_user');
 }
 
+//*
+//* Cho phép viết PHP vào Text Widget
+//*
+function php_text($text)
+{
+    if (strpos($text, '<' . '?') !== false) {
+        ob_start();
+        eval('?' . '>' . $text);
+        $text = ob_get_contents();
+        ob_end_clean();
+    }
+    return $text;
+}
+add_filter('widget_text', 'php_text', 99);
 
 
 
