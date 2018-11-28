@@ -110,40 +110,6 @@ function special_nav_class($classes, $item)
 add_filter('gform_enable_field_label_visibility_settings', '__return_true');
 
 
-
-
-//*
-//* Bắt buộc thêm ảnh Featured Image trước khi đăng bài
-//*
-add_action('save_post', 'wpds_check_thumbnail');
-add_action('admin_notices', 'wpds_thumbnail_error');
-function wpds_check_thumbnail($post_id) {
-    // change to any <a href="https://thachpham.com/tag/custom-post-type" data-wpel-link="internal">custom post type</a>
-    if(get_post_type($post_id) != 'post')
-        return;
-    if ( !has_post_thumbnail( $post_id ) ) {
-        // set a transient to show the users an admin message
-        set_transient( "has_post_thumbnail", "no" );
-        // unhook this function so it doesn't loop infinitely
-        remove_action('save_post', 'wpds_check_thumbnail');
-        // update the post set it to draft
-        wp_update_post(array('ID' => $post_id, 'post_status' => 'draft'));
-        add_action('save_post', 'wpds_check_thumbnail');
-    } else {
-        delete_transient( "has_post_thumbnail" );
-    }
-}
-function wpds_thumbnail_error()
-{
-    // check if the transient is set, and display the error message
-    if ( get_transient( "has_post_thumbnail" ) == "no" ) {
-        echo "<div id='message' class='error'><p><strong>Bạn phải thêm ảnh Featured Image!.</strong></p></div>";
-        delete_transient( "has_post_thumbnail" );
-    }
-}
-
-
-
 //*
 //* Thêm màu trạng thái bài viết
 //*
